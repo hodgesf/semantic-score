@@ -1,0 +1,20 @@
+# Code-only release: everything is ignored except source code and the files needed to install
+# and run it. Data, results, logs, model checkpoints, raw rater workbooks and the manuscript stay
+# local; see README.md for the inputs each step needs.
+*
+!*/
+!*.py
+!.gitignore
+!/README.md
+!LICENSE
+!pyproject.toml
+!requirements-analysis.txt
+!requirements-gpu.txt
+
+# Local working material, caches and virtual environments, even when they contain code
+archive/
+__pycache__/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
