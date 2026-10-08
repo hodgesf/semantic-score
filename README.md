@@ -18,6 +18,7 @@ responses are not included; they are available from the corresponding author (se
 | `paths.py` | Repository and external-input locations shared by every script |
 | `build_nodes.py`, `semantic_ic.py`, `generality_axis.py` | Node table, text-mined parent/child pairs, label-free generality axis |
 | `axis_pair_ablation.py`, `combine.py`, `report_tables.py`, `seal_sample_a.py` | Axis robustness, degree-quintile AUCs, sealed Sample A axis scores |
+| `figures.py` | Manuscript figures 1 to 4 and supplementary figure S1, to Frontiers specifications |
 | `panel/`, `rq1_report/` | Expert-panel Sample A (draw, rating forms, combined ratings) and the IC-versus-panel analysis |
 | `sample_b/` | Sample B (concepts without IC): draw and panel analysis |
 | `v1/` | The parts of the earlier linear score that v2 depends on: training set, BioLORD embeddings, Sample A reference table, Sample B sealed scores |
@@ -144,6 +145,14 @@ for j in gemma nemo phi; do python llm_panel/infer.py $j; done
 python llm_panel/analyze_validation.py
 python llm_panel/analyze_audit.py
 ```
+
+**9. Manuscript figures**
+```
+python figures.py                   # results/figures
+python figures.py <output directory>
+```
+Each figure is written as a vector PDF and as a 300 dpi RGB LZW TIFF, 180 mm wide (Frontiers'
+two-column width), with figure text at 8 pt or larger and data lines at 2 pt or heavier.
 
 Seeds are fixed in the scripts (2654, with 2655 for the Sample B and replication draws).
 
